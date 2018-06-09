@@ -20,7 +20,7 @@
       <p>Posted on {{ post.created_at | date  }}</p>
       <div class="actions">
         <button type="button" routerLink="/post-update/{{ post.id}}" class="btn btn-primary" name="button">Edit</button>
-        <button type="button" class="btn btn-danger" name="button">Delete</button>
+        <a routerLink="/posts" class="btn btn-danger" (click)="deletePost(post.id)">Delete</a>
       </div>
 
       <hr>
