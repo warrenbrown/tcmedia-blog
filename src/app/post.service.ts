@@ -31,4 +31,8 @@ updatePost(id, post) {
   return this.http.put(this.domain + '/posts/' + id, post );
 }
 
+deletePost(id) {
+  return this.http.delete(this.domain + '/posts/' + id);
+}
+
 }

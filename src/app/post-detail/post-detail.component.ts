@@ -9,13 +9,17 @@ import { PostService } from '../post.service';
 })
 export class PostDetailComponent implements OnInit {
 post = {};
-  constructor(private route: ActivatedRoute, private postService: PostService) { }
+  constructor(private route: ActivatedRoute, private postService: PostService, private router: Router) { }
 
   ngOnInit() {
     this.postService.getOnePost(this.route.snapshot.params['id']).subscribe(post => {
       this.post = post;
     });
-
   }
 
+  deletePost(id) {
+    this.postService.deletePost(id).subscribe(res => {
+      this.router.navigate(['/posts']);
+    });
+  }
 }
