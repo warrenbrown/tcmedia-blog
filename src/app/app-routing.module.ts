@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { PostCreateComponent } from './post-create/post-create.component';
+import { PostUpdateComponent } from './post-update/post-update.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'post-create',
     component: PostCreateComponent
+  },
+  {
+    path: 'post-update/:id',
+    component: PostUpdateComponent
   }
 ];
 
