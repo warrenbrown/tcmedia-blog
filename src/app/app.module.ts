@@ -11,6 +11,7 @@ import { PostListComponent } from './post-list/post-list.component';
 import { HomeComponent } from './home/home.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { PostCreateComponent } from './post-create/post-create.component';
+import { PostUpdateComponent } from './post-update/post-update.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PostCreateComponent } from './post-create/post-create.component';
     PostListComponent,
     HomeComponent,
     PostDetailComponent,
-    PostCreateComponent
+    PostCreateComponent,
+    PostUpdateComponent
   ],
   imports: [
     BrowserModule,
