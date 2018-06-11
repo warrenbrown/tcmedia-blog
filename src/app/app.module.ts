@@ -8,6 +8,7 @@ import { MaterializeModule } from 'angular2-materialize';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { CategoryService } from './category.service';
 import { PostService } from './post.service';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
@@ -50,10 +51,12 @@ import { ProfileComponent } from './profile/profile.component';
   providers: [
     PostService,
     Angular2TokenService,
-    HttpClientModule,
-    AuthService,
-    AuthGuard
+    AuthGuard,
+    PostService,
+    CategoryService,
+    HttpClientModule
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
