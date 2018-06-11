@@ -5,6 +5,8 @@ import { PostListComponent } from './post-list/post-list.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { PostCreateComponent } from './post-create/post-create.component';
 import { PostUpdateComponent } from './post-update/post-update.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -30,6 +32,11 @@ const routes: Routes = [
   {
     path: 'post-update/:id',
     component: PostUpdateComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [ AuthGuard ]
   }
 ];
 

@@ -10,6 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { CategoryService } from './category.service';
 import { PostService } from './post.service';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
+
 import { AppComponent } from './app.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { HomeComponent } from './home/home.component';
@@ -20,6 +23,7 @@ import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -33,7 +37,8 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     AuthDialogComponent,
     ToolbarComponent,
     LoginFormComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -46,12 +51,12 @@ import { RegisterFormComponent } from './register-form/register-form.component';
   providers: [
     PostService,
     Angular2TokenService,
+    AuthGuard,
     PostService,
     CategoryService,
     HttpClientModule
   ],
 
- 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

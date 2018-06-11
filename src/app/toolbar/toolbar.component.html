@@ -2,7 +2,7 @@
 
   <nav  role="navigation">
 
-    <div class="nav-wrapper blue ">
+    <div class="nav-wrapper red ">
       <a [routerLink]="['']" id="logo-container" class="brand-logo">TCMedia</a>
 
       <ul class="right hide-on-med-and-down">
@@ -11,20 +11,20 @@
           <a routerLink="home">Home
           </a>
         </li>
-        <li *ngIf="!tokenAuthService.userSignedIn()">
+        <li *ngIf="!(authService.userSignedIn$ | async)">
           <a (click)="presentAuthDialog()">Login</a>
         </li>
-        <li *ngIf="!tokenAuthService.userSignedIn()">
+        <li *ngIf="!(authService.userSignedIn$ | async)">
           <a (click)="presentAuthDialog('register')">Register</a>
         </li>
-        <li *ngIf="tokenAuthService.userSignedIn()">
+        <li *ngIf="(authService.userSignedIn$ | async)">
           <a [routerLink]="['/profile']">Profile</a>
         </li>
         <li>
           <a routerLink="/posts">Articles</a>
         </li>
-        <li *ngIf="tokenAuthService.userSignedIn()">
-          <a (click)="tokenAuthService.signOut()">Logout</a>
+        <li *ngIf="(authService.userSignedIn$ | async)">
+          <a (click)="logOut()">Logout</a>
         </li>
       </ul>
     </div>
