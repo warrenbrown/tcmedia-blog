@@ -27,11 +27,13 @@ const routes: Routes = [
   },
   {
     path: 'post-create',
-    component: PostCreateComponent
+    component: PostCreateComponent,
+    canActivate: [ AuthGuard ]
   },
   {
     path: 'post-update/:id',
-    component: PostUpdateComponent
+    component: PostUpdateComponent,
+    canActivate: [ AuthGuard ]
   },
   {
     path: 'profile',
