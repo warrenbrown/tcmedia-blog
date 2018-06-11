@@ -54,7 +54,8 @@ import { ProfileComponent } from './profile/profile.component';
     AuthGuard,
     PostService,
     CategoryService,
-    HttpClientModule
+    HttpClientModule,
+    AuthService
   ],
 
   bootstrap: [AppComponent]
