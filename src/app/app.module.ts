@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { CategoryService } from './category.service';
 import { PostService } from './post.service';
 import { AppComponent } from './app.component';
 import { PostListComponent } from './post-list/post-list.component';
@@ -29,7 +30,10 @@ import { PostUpdateComponent } from './post-update/post-update.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [PostService],
+  providers: [
+    PostService,
+    CategoryService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
