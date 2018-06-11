@@ -8,6 +8,7 @@ import { MaterializeModule } from 'angular2-materialize';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { CategoryService } from './category.service';
 import { PostService } from './post.service';
 import { AppComponent } from './app.component';
 import { PostListComponent } from './post-list/post-list.component';
@@ -45,8 +46,12 @@ import { RegisterFormComponent } from './register-form/register-form.component';
   providers: [
     PostService,
     Angular2TokenService,
+    PostService,
+    CategoryService,
     HttpClientModule
   ],
+
+ 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
+import { CategoryService } from '../category.service';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -10,9 +11,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PostCreateComponent implements OnInit {
 post = {};
-  constructor(private postService: PostService, private router: Router) { }
+categories: any;
+  constructor(private postService: PostService, private router: Router, private categoryService: CategoryService) { }
 
   ngOnInit() {
+    this.categoryService.getCategories().subscribe(categories => {
+      this.categories = categories;
+    });
   }
   savePost() {
     this.postService.createPost(this.post).subscribe(post => {

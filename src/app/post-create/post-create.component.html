@@ -13,6 +13,13 @@
       <label for="pulished">Published</label>
       <input class="form-control" #published='ngModel' [(ngModel)]="post.published" type="checkbox" name="published" value="">
     </div>
+
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select class="form-control" name="post.category_id" #post.category='ngModel' [(ngModel)]="post.category_id">
+        <option *ngFor="let category of categories"  [ngValue]="category.id">{{ category.name}}</option>
+      </select>
+    </div>
     <div class="form-group">
       <button type="submit" class="btn btn-primary" name="button">Save Post</button>
     </div>
