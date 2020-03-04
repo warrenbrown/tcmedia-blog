@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { Angular2TokenService } from 'angular2-token';
+import 'materialize-css';
 import { MaterializeModule } from 'angular2-materialize';
 
 import { AppRoutingModule } from './app-routing.module';

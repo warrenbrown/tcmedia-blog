@@ -10,8 +10,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./post-create.component.css']
 })
 export class PostCreateComponent implements OnInit {
-post = {};
-categories: any;
+  selectedFile: File;
+
+  post = {};
+  categories: any;
   constructor(private postService: PostService, private router: Router, private categoryService: CategoryService) { }
 
   ngOnInit() {
@@ -24,6 +26,15 @@ categories: any;
       const id = this.post['id'];
       this.router.navigateByUrl('/posts');
     });
+  }
+
+
+  onFileChanged(event) {
+    this.selectedFile = event.target.files[0]
+  }
+
+  onUpload() {
+    // upload code goes here
   }
 
 }
